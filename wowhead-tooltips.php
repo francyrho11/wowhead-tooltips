@@ -27,8 +27,9 @@ class WowheadTooltips
      */
     public function enqueue_scripts()
     {
-        //wp_enqueue_style('style-name', get_stylesheet_uri());
-        wp_enqueue_script($this->plugin_domain, '//wow.zamimg.com/widgets/power.js', array(), '1.0.0', true);
+        wp_enqueue_style($this->plugin_domain . '-style', plugins_url('style.css', __FILE__));
+        wp_enqueue_script($this->plugin_domain . '-settings', plugins_url('wowhead-tooltip-settings.js', __FILE__), array(), '1.0.0', false);
+        wp_enqueue_script($this->plugin_domain, '//wow.zamimg.com/widgets/power.js', array(), '1.0.0', false);
     }
 
 }
